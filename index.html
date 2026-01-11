@@ -1,0 +1,1665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VA Guide 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #1a1a1a;
+            line-height: 1.5;
+            padding: 1%;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 100%;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 12px 1%;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        
+        .tabs {
+            display: flex;
+            background: #f8f9fa;
+            overflow-x: auto;
+            border-bottom: 2px solid #e9ecef;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .tab {
+            flex: 1;
+            min-width: 80px;
+            padding: 10px 8px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #666;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+        
+        .tab.active {
+            background: white;
+            color: #667eea;
+            border-bottom: 3px solid #667eea;
+        }
+        
+        .content {
+            padding: 1%;
+            max-height: calc(100vh - 140px);
+            overflow-y: auto;
+        }
+        
+        .section {
+            display: none;
+            animation: fadeIn 0.3s;
+        }
+        
+        .section.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .card {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 10px 1%;
+            margin-bottom: 8px;
+            border-radius: 6px;
+            transition: transform 0.2s;
+        }
+        
+        .card:active {
+            transform: scale(0.98);
+        }
+        
+        .card-title {
+            font-weight: 600;
+            color: #1e3c72;
+            font-size: 0.95rem;
+            margin-bottom: 6px;
+        }
+        
+        .card-content {
+            font-size: 0.85rem;
+            color: #495057;
+        }
+        
+        .checklist {
+            list-style: none;
+        }
+        
+        .checklist li {
+            padding: 6px 0 6px 28px;
+            position: relative;
+            font-size: 0.85rem;
+        }
+        
+        .checklist li:before {
+            content: "✓";
+            position: absolute;
+            left: 6px;
+            color: #28a745;
+            font-weight: bold;
+        }
+        
+        .tip {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 8px 1%;
+            margin: 8px 0;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+        
+        .warning {
+            background: #f8d7da;
+            border-left: 4px solid #dc3545;
+            padding: 8px 1%;
+            margin: 8px 0;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+        
+        .time-slot {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin: 3px;
+        }
+        
+        .tool {
+            display: inline-block;
+            background: #e9ecef;
+            padding: 6px 12px;
+            border-radius: 6px;
+            margin: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🇵🇭 VA Quick Reference 2026</h1>
+        </header>
+        
+        <div class="tabs">
+            <button class="tab active" onclick="showSection('daily')">Daily</button>
+            <button class="tab" onclick="showSection('clients')">Clients</button>
+            <button class="tab" onclick="showSection('skills')">Skills</button>
+            <button class="tab" onclick="showSection('finance')">Finance</button>
+            <button class="tab" onclick="showSection('niche')">Niche</button>
+            <button class="tab" onclick="showSection('crisis')">Crisis</button>
+            <button class="tab" onclick="showSection('platforms')">Platforms</button>
+            <button class="tab" onclick="showSection('security')">Security</button>
+            <button class="tab" onclick="showSection('development')">Dev</button>
+            <button class="tab" onclick="showSection('retention')">Retention</button>
+            <button class="tab" onclick="showSection('balance')">Balance</button>
+            <button class="tab" onclick="showSection('legal')">Legal</button>
+            <button class="tab" onclick="showSection('toolsmaster')">ToolsPro</button>
+            <button class="tab" onclick="showSection('commmaster')">CommPro</button>
+            <button class="tab" onclick="showSection('tools')">Tools</button>
+            <button class="tab" onclick="showSection('comm')">Comm</button>
+            <button class="tab" onclick="showSection('tips')">Tips</button>
+        </div>
+        
+        <div class="content">
+            <div id="clients" class="section">
+                <div class="card">
+                    <div class="card-title">Client Onboarding Checklist</div>
+                    <div class="card-content">
+                        <ul class="checklist">
+                            <li>Signed contract with clear scope</li>
+                            <li>Access to required tools/platforms</li>
+                            <li>Communication preferences documented</li>
+                            <li>Timezone & availability confirmed</li>
+                            <li>Payment terms & schedule agreed</li>
+                            <li>Emergency contact information</li>
+                            <li>Trial period expectations set</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">SOP Creation Template</div>
+                    <div class="card-content">
+                        <strong>1. Task Name:</strong> Clear title<br>
+                        <strong>2. Purpose:</strong> Why it matters<br>
+                        <strong>3. Frequency:</strong> Daily/weekly/monthly<br>
+                        <strong>4. Tools Needed:</strong> List all<br>
+                        <strong>5. Step-by-step:</strong> Numbered actions<br>
+                        <strong>6. Quality Check:</strong> Validation steps<br>
+                        <strong>7. Troubleshooting:</strong> Common issues
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Setting Boundaries Scripts</div>
+                    <div class="card-content">
+                        <strong>Off-hours request:</strong><br>
+                        "I'm available [your hours] PH time. I can handle this during my next shift at [time], or if urgent, my overtime rate is [rate]."<br><br>
+                        <strong>Scope creep:</strong><br>
+                        "This falls outside our agreed scope. I'm happy to handle it—shall we discuss adding it to the contract?"<br><br>
+                        <strong>Unrealistic deadline:</strong><br>
+                        "To deliver quality work, I need [time]. I can rush it by [date] but may compromise [aspect]."
+                    </div>
+                </div>
+                
+                <div class="tip">
+                    💡 Document everything in first 30 days—it becomes your training manual
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Rate Negotiation Framework</div>
+                    <div class="card-content">
+                        <strong>Research:</strong> Check market rates (Onlinejobs.ph, Upwork)<br>
+                        <strong>Calculate minimum:</strong> Expenses + savings + taxes ÷ billable hours<br>
+                        <strong>Entry level:</strong> $3-5/hr<br>
+                        <strong>Experienced (1-3yrs):</strong> $5-10/hr<br>
+                        <strong>Specialist (3+yrs):</strong> $10-20/hr<br>
+                        <strong>Expert/Niche:</strong> $20-40/hr<br><br>
+                        <strong>Raise script:</strong> "Based on [achievements], I'd like to discuss adjusting my rate to [amount] starting [date]."
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Essential Contract Clauses</div>
+                    <div class="card-content">
+                        <ul class="checklist">
+                            <li>Scope of work (specific tasks)</li>
+                            <li>Payment rate & schedule</li>
+                            <li>Working hours & timezone</li>
+                            <li>Notice period for termination</li>
+                            <li>Confidentiality agreement</li>
+                            <li>Equipment/software provider</li>
+                            <li>Holiday & sick leave policy</li>
+                            <li>Intellectual property ownership</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="warning">
+                    ⚠️ Never start work without a written agreement, even with "trusted" clients
+                </div>
+            </div>
+            
+            <div id="skills" class="section">
+                <div class="card">
+                    <div class="card-title">AI Tools Mastery 2026</div>
+                    <div class="card-content">
+                        <strong>ChatGPT/Claude:</strong><br>
+                        • Email drafting & proofreading<br>
+                        • Meeting summaries & notes<br>
+                        • Research & data synthesis<br>
+                        • Content ideation<br><br>
+                        <strong>Midjourney/DALL-E:</strong><br>
+                        • Social media graphics<br>
+                        • Presentation visuals<br>
+                        • Brand mockups<br><br>
+                        <strong>Prompt formula:</strong> [Role] + [Task] + [Context] + [Format] + [Constraints]
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Automation Workflows</div>
+                    <div class="card-content">
+                        <span class="tool">Zapier</span>
+                        <span class="tool">Make (Integromat)</span>
+                        <span class="tool">IFTTT</span><br><br>
+                        <strong>Common automations:</strong><br>
+                        • Email → Slack notification<br>
+                        • Form submit → CRM entry<br>
+                        • Calendar event → Task creation<br>
+                        • Invoice paid → Spreadsheet update<br>
+                        • Social post → Multi-platform publish
+                    </div>
+                </div>
+                
+                <div class="tip">
+                    💡 Automate repetitive tasks taking >2hrs/week—ROI is massive
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">CRM Platforms</div>
+                    <div class="card-content">
+                        <strong>Salesforce:</strong> Enterprise sales tracking<br>
+                        <strong>HubSpot:</strong> Marketing & sales automation<br>
+                        <strong>Monday.com:</strong> Project & client management<br>
+                        <strong>Pipedrive:</strong> Visual sales pipeline<br>
+                        <strong>Zoho:</strong> All-in-one business suite<br><br>
+                        <strong>Master these actions:</strong><br>
+                        • Contact import/export<br>
+                        • Pipeline stage updates<br>
+                        • Report generation<br>
+                        • Email integration<br>
+                        • Task automation
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Analytics & Reporting</div>
+                    <div class="card-content">
+                        <strong>Google Analytics:</strong> Website traffic<br>
+                        <strong>Meta Business Suite:</strong> Social media performance<br>
+                        <strong>Google Data Studio:</strong> Visual dashboards<br><br>
+                        <strong>Weekly report template:</strong><br>
+                        1. Key metrics & trends<br>
+                        2. Completed tasks (quantified)<br>
+                        3. Upcoming priorities<br>
+                        4. Blockers/needs<br>
+                        5. Suggestions for improvement
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Project Management Methods</div>
+                    <div class="card-content">
+                        <strong>Agile/Scrum:</strong> 2-week sprints, daily standups<br>
+                        <strong>Kanban:</strong> Visual boards (To Do → Doing → Done)<br>
+                        <strong>GTD (Getting Things Done):</strong> Capture → Clarify → Organize → Reflect → Engage<br>
+                        <strong>Eisenhower Matrix:</strong> Urgent/Important prioritization<br><br>
+                        <strong>Tools:</strong> Asana, Trello, ClickUp, Notion, Jira
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Advanced Excel/Sheets Skills</div>
+                    <div class="card-content">
+                        <ul class="checklist">
+                            <li>VLOOKUP, INDEX-MATCH formulas</li>
+                            <li>Pivot tables & charts</li>
+                            <li>Conditional formatting</li>
+                            <li>Data validation & protection</li>
+                            <li>Macros/Apps Script basics</li>
+                            <li>Dashboard creation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="finance" class="section">
+                <div class="card">
+                    <div class="card-title">Invoice Template Essentials</div>
+                    <div class="card-content">
+                        <strong>Must include:</strong><br>
+                        • Your name/business name<br>
+                        • Invoice number (sequential)<br>
+                        • Issue date & due date<br>
+                        • Client details<br>
+                        • Itemized services & hours<br>
+                        • Rate per hour/project<br>
+                        • Total amount due<br>
+                        • Payment methods accepted<br>
+                        • Late payment terms (if any)
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Payment Terms Standards</div>
+                    <div class="card-content">
+                        <strong>New clients:</strong> 50% upfront OR weekly payments<br>
+                        <strong>Established:</strong> Net 7, Net 15, or Net 30<br>
+                        <strong>Retainer:</strong> Monthly advance payment<br>
+                        <strong>Project-based:</strong> Milestone payments (30-40-30)<br><br>
+                        <div class="warning">
+                            ⚠️ Never exceed 40hrs unpaid work—protect yourself
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Philippine Tax Obligations (BIR)</div>
+                    <div class="card-content">
+                        <strong>Annual income ₱250k+:</strong> Register as self-employed<br>
+                        <strong>Requirements:</strong><br>
+                        • BIR registration (Form 1901)<br>
+                        • TIN (Tax Identification Number)<br>
+                        • Quarterly tax filing (1701Q)<br>
+                        • Annual ITR (1701 or 1701A)<br>
+                        • 8% income tax OR graduated rate<br><br>
+                        <strong>Deadline:</strong> April 15 annually<br>
+                        <strong>Records to keep:</strong> 3 years minimum
+                    </div>
+                </div>
+                
+                <div class="tip">
+                    💡 Hire an accountant when earning ₱50k+/month—worth the investment
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Multi-Currency Payment Platforms</div>
+                    <div class="card-content">
+                        <strong>PayPal:</strong><br>
+                        • Fee: 3.9% + fixed fee<br>
+                        • Withdrawal: 2-3 days to PH bank<br>
+                        • Best for: Small transactions<br><br>
+                        <strong>Wise (TransferWise):</strong><br>
+                        • Fee: 0.5-1.5% (transparent)<br>
+                        • Withdrawal: 1-2 days<br>
+                        • Best for: Regular large transfers<br><br>
+                        <strong>Payoneer:</strong><br>
+                        • Fee: Up to 3%<br>
+                        • Withdrawal: Direct to PH bank<br>
+                        • Best for: Marketplace payments<br><br>
+                        <strong>RemoteWorker PH / OnlineJobs.ph:</strong><br>
+                        • Local option with lower fees
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Rate Calculation Formula</div>
+                    <div class="card-content">
+                        <strong>Step 1:</strong> Monthly expenses (rent, food, bills, etc.)<br>
+                        <strong>Step 2:</strong> + Desired savings (20% minimum)<br>
+                        <strong>Step 3:</strong> + Taxes (8-35% depending on bracket)<br>
+                        <strong>Step 4:</strong> + Emergency fund contribution<br>
+                        <strong>Step 5:</strong> ÷ Billable hours/month (120-160)<br>
+                        <strong>Step 6:</strong> + 20% buffer for sick days/gaps<br><br>
+                        <strong>Example:</strong><br>
+                        (₱30k expenses + ₱6k savings + ₱3k tax) ÷ 160 hrs = ₱244/hr = $4.35/hr minimum
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Expense Tracking System</div>
+                    <div class="card-content">
+                        <strong>Categories to track:</strong><br>
+                        • Internet & utilities<br>
+                        • Software subscriptions<br>
+                        • Hardware & equipment<br>
+                        • Education & training<br>
+                        • Professional services<br>
+                        • Co-working space (if any)<br><br>
+                        <strong>Tools:</strong> Wave, QuickBooks, Excel template<br>
+                        <strong>Deductible expenses:</strong> Save receipts for tax purposes
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Emergency Fund Strategy</div>
+                    <div class="card-content">
+                        <strong>Goal:</strong> 3-6 months of expenses<br>
+                        <strong>Where to save:</strong><br>
+                        • High-yield savings (CIMB, ING, Tonik)<br>
+                        • Money market funds<br>
+                        • Separate from daily account<br><br>
+                        <strong>Build gradually:</strong> 10-20% of each payment<br>
+                        <strong>Use only for:</strong> Job loss, health emergency, major repairs
+                    </div>
+                </div>
+                
+                <div class="warning">
+                    ⚠️ Currency exchange rates fluctuate—factor in 5-10% buffer when pricing
+                </div>
+            </div>
+            
+            <div id="niche" class="section">
+                <div class="card">
+                    <div class="card-title">Real Estate VA Specifics</div>
+                    <div class="card-content">
+                        <strong>Key platforms:</strong><br>
+                        • MLS (Multiple Listing Service)<br>
+                        • Zillow, Realtor.com<br>
+                        • Follow Up Boss, LionDesk<br>
+                        • DocuSign for contracts<br><br>
+                        <strong>Common tasks:</strong><br>
+                        • Lead generation & qualification<br>
+                        • CRM data entry (properties/contacts)<br>
+                        • Listing coordination & photos<br>
+                        • Open house scheduling<br>
+                        • Transaction coordination<br>
+                        • Market research & CMAs<br><br>
+                        <strong>Must know:</strong> Real estate terminology, local market knowledge, compliance basics
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">E-commerce VA (Amazon/Shopify)</div>
+                    <div class="card-content">
+                        <strong>Amazon FBA:</strong><br>
+                        • Product research (Jungle Scout, Helium 10)<br>
+                        • Listing optimization (SEO keywords)<br>
+                        • Inventory management<br>
+                        • PPC campaign management<br>
+                        • Review monitoring & response<br>
+                        • Supplier communication<br><br>
+                        <strong>Shopify:</strong><br>
+                        • Store setup & theme customization<br>
+                        • Product uploads & descriptions<br>
+                        • Order fulfillment tracking<br>
+                        • Customer service via chat/email<br>
+                        • App integration (Oberlo, Printful)<br>
+                        • Abandoned cart recovery
+                    </div>
+                </div>
+                
+                <div class="tip">
+                    💡 Niche specialization = 30-50% higher rates than general VA work
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Social Media Marketing</div>
+                    <div class="card-content">
+                        <strong>Content calendar structure:</strong><br>
+                        • Theme days (Mon: Tips, Wed: Case study, Fri: Behind-scenes)<br>
+                        • 2-4 weeks planned in advance<br>
+                        • Mix: 80% value, 20% promotional<br><br>
+                        <strong>Scheduling tools:</strong><br>
+                        <span class="tool">Buffer</span>
+                        <span class="tool">Hootsuite</span>
+                        <span class="tool">Later</span>
+                        <span class="tool">Meta Business Suite</span><br><br>
+                        <strong>Analytics to track:</strong><br>
+                        • Engagement rate (likes+comments÷followers)<br>
+                        • Reach & impressions<br>
+                        • Click-through rate<br>
+                        • Best posting times<br>
+                        • Content type performance
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Executive Assistant Protocols</div>
+                    <div class="card-content">
+                        <strong>Email management:</strong><br>
+                        • Priority folders (Urgent, Today, This Week)<br>
+                        • Draft responses for exec approval<br>
+                        • Flag items needing decisions<br>
+                        • Archive/delete after 30 days<br><br>
+                        <strong>Calendar optimization:</strong><br>
+                        • Color-code by type (meetings, focus, personal)<br>
+                        • Buffer time between meetings (15min)<br>
+                        • Protect focus blocks (no meetings)<br>
+                        • Send meeting prep 24hrs before<br><br>
+                        <strong>Travel booking:</strong><br>
+                        • Build itinerary doc (flights, hotels, transfers)<br>
+                        • Consider exec preferences (aisle seat, hotel chain)<br>
+                        • Add buffer for connections<br>
+                        • Mobile boarding passes ready
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Customer Service Scripts</div>
+                    <div class="card-content">
+                        <strong>Greeting:</strong><br>
+                        "Hi [Name], thanks for reaching out! I'm [Your Name] with [Company]. How can I help you today?"<br><br>
+                        <strong>Acknowledging issue:</strong><br>
+                        "I understand how frustrating that must be. Let me look into this for you right away."<br><br>
+                        <strong>Can't resolve immediately:</strong><br>
+                        "I need to check with my team on this. I'll have an answer for you within [timeframe]. Can I follow up via email?"<br><br>
+                        <strong>Closing:</strong><br>
+                        "Is there anything else I can help with today? We appreciate your business!"<br><br>
+                        <strong>Angry customer:</strong><br>
+                        Stay calm, don't take it personally, empathize, offer solution or escalate
+                    </div>
+                </div>
+            </div>
+            
+            <div id="crisis" class="section">
+                <div class="card">
+                    <div class="card-title">Internet Outage Protocol</div>
+                    <div class="card-content">
+                        <strong>Immediate actions (within 5min):</strong><br>
+                        1. Switch to mobile hotspot<br>
+                        2. Message client: "Internet issue, switched to backup. Fully operational."<br>
+                        3. Test connectivity & speed<br>
+                        4. Contact ISP if backup also fails<br><br>
+                        <strong>Extended outage (>2hrs):</strong><br>
+                        1. Relocate to co-working space/cafe<br>
+                        2. Update client with ETA<br>
+                        3. Document time lost<br>
+                        4. Consider making up hours if critical deadline<br><br>
+                        <strong>Prevention:</strong><br>
+                        • Map 3 nearby backup locations<br>
+                        • Keep mobile data topped up<br>
+                        • Save critical files offline
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Client Escalation Handling</div>
+                    <div class="card-content">
+                        <strong>When client is upset:</strong><br>
+                        1. Listen without interrupting<br>
+                        2. Acknowledge feelings: "I understand your concern"<br>
+                        3. Take responsibility if your error<br>
+                        4. Propose specific solution + timeline<br>
+                        5. Follow up in writing<br>
+                        6. Deliver on promise<br><br>
+                        <strong>If beyond your scope:</strong><br>
+                        "This is outside my area—let me connect you with [person/resource] who can help better."<br><br>
+                        <strong>If unreasonable demand:</strong><br>
+                        "I want to help, but [explain constraint]. Here's what I can do: [alternative]."
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Mistake Recovery Procedures</div>
+                    <div class="card-content">
+                        <strong>Step 1 - Own it immediately:</strong><br>
+                        "I made an error with [task]. Here's what happened: [brief explanation]."<br><br>
+                        <strong>Step 2 - Assess impact:</strong><br>
+                        "This affects [what/who]. Urgency level: [high/medium/low]."<br><br>
+                        <strong>Step 3 - Fix it fast:</strong><br>
+                        "I'm correcting it now. Will be resolved by [specific time]."<br><br>
+                        <strong>Step 4 - Prevent recurrence:</strong><br>
+                        "To prevent this, I've added [checklist/system/reminder]."<br><br>
+                        <strong>Step 5 - Follow up:</strong><br>
+                        Send confirmation when fixed + apologize once more<br><br>
+                        <div class="warning">
+                            ⚠️ Never hide mistakes—transparency builds trust
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Burnout Prevention</div>
+                    <div class="card-content">
+                        <strong>Warning signs:</strong><br>
+                        • Dreading work every day<br>
+                        • Constant fatigue despite rest<br>
+                        • Declining quality of work<br>
+                        • Physical symptoms (headaches, insomnia)<br>
+                        • Detachment from clients<br><br>
+                        <strong>Prevention strategies:</strong><br>
+                        • Strict work hours (no 24/7 availability)<br>
+                        • Weekly day off (non-negotiable)<br>
+                        • Regular breaks (Pomodoro technique)<br>
+                        • Separate work/personal space<br>
+                        • Say no to overload<br>
+                        • Vacation time every quarter<br><br>
+                        <strong>Recovery if burned out:</strong><br>
+                        1. Talk to client about workload<br>
+                        2. Take 3-5 days complete disconnect<br>
+                        3. Reevaluate boundaries & rates<br>
+                        4. Consider reducing hours/clients
+                    </div>
+                </div>
+                
+                <div class="tip">
+                    💡 Schedule "deep work" blocks—your best work happens in uninterrupted time
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Emergency Contact Template</div>
+                    <div class="card-content">
+                        <strong>Share with all clients:</strong><br><br>
+                        <strong>Primary contact:</strong> [Your number/email]<br>
+                        <strong>Backup contact:</strong> [Trusted colleague/family]<br>
+                        <strong>Emergency only:</strong> [Alternative number]<br><br>
+                        <strong>If I'm unreachable for 24hrs:</strong><br>
+                        Contact [backup person] at [contact info]<br><br>
+                        <strong>Critical access info:</strong><br>
+                        • Tools/platforms shared with backup<br>
+                        • SOPs location documented<br>
+                        • Key passwords in secure vault (LastPass/1Password)<br><br>
+                        <strong>Use cases:</strong> Medical emergency, family crisis, natural disaster
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Power Outage Contingency</div>
+                    <div class="card-content">
+                        <strong>Essential equipment:</strong><br>
+                        • UPS (uninterruptible power supply) - 2-4hrs backup<br>
+                        • Power bank for phone/router<br>
+                        • Laptop fully charged daily<br><br>
+                        <strong>During outage:</strong><br>
+                        1. Switch to battery power<br>
+                        2. Notify client immediately<br>
+                        3. Save all work every 5min<br>
+                        4. Prioritize urgent tasks<br>
+                        5. If >1hr, relocate or reschedule<br><br>
+                        <strong>Philippine context:</strong> Brownouts common in some areas—factor into workspace choice
+                    </div>
+                </div>
+            </div>
+            
+            <div id="platforms" class="section">
+                <div class="card">
+                    <div class="card-title">Upwork Optimization</div>
+                    <div class="card-content">
+                        <strong>Profile essentials:</strong><br>
+                        • Professional photo (clear face, smile)<br>
+                        • Specific title (not "Virtual Assistant")<br>
+                        • Skills-focused overview (not generic)<br>
+                        • Portfolio samples (5-8 pieces)<br>
+                        • Certifications & tests<br>
+                        • Video introduction<br><br>
+                        <strong>Proposal formula:</strong><br>
+                        1. Personalized greeting (use client name)<br>
+                        2. Show you read job (reference specific detail)<br>
+                        3. Relevant experience (1-2 examples)<br>
+                        4. How you'll solve their problem<br>
+                        5. Call to action (quick call?)<br>
+                        6. Professional close<br><br>
+                        <strong>Tips:</strong><br>
+                        • Apply to 10-15 jobs daily<br>
+                        • Response rate >90%<br>
+                        • Deliver on time = better algorithm ranking<br>
+                        • Ask happy clients for reviews
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">OnlineJobs.ph Best Practices</div>
+                    <div class="card-content">
+                        <strong>Standout profile:</strong><br>
+                        • Detailed work history<br>
+                        • Skills matrix (rate yourself honestly)<br>
+                        • Available hours clearly stated<br>
+                        • Salary expectation (realistic range)<br>
+                        • Quick response to messages<br><br>
+                        <strong>Application strategy:</strong><br>
+                        • Apply within 24hrs of posting<br>
+                        • Customize cover letter (no templates)<br>
+                        • Address all requirements in job post<br>
+                        • Include work samples if applicable<br><br>
+                        <strong>Red flags to avoid:</strong><br>
+                        • "Must start immediately" (no onboarding)<br>
+                        • Vague job descriptions<br>
+                        • Too good to be true rates<br>
+                        • No company information
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">LinkedIn Client Acquisition</div>
+                    <div class="card-content">
+                        <strong>Profile optimization:</strong><br>
+                        • Headline: [Your specialty] | Helping [target client] achieve [result]<br>
+                        • About: Results-focused, specific achievements<br>
+                        • Featured: Work samples, testimonials<br>
+                        • Recommendations from clients<br><br>
+                        <strong>Content strategy:</strong><br>
+                        • Post 3x/week (tips, case studies, insights)<br>
+                        • Engage on target clients' posts<br>
+                        • Share before/after results<br>
+                        • Use hashtags: #VirtualAssistant #RemoteWork<br><br>
+                        <strong>Outreach template:</strong><br>
+                        "Hi [Name], I noticed [specific thing about their business]. I help [target audience] with [specific outcome]. Would you be open to a brief chat about [relevant topic]?"<br><br>
+                        <strong>Don't:</strong> Generic connection requests, immediate sales pitch
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Portfolio Building Guide</div>
+                    <div class="card-content">
+                        <strong>What to include:</strong><br>
+                        • 5-8 best work samples<br>
+                        • Before/after comparisons<br>
+                        • Specific results (numbers matter)<br>
+                        • Client testimonials (with permission)<br>
+                        • Process screenshots (redact sensitive info)<br><br>
+                        <strong>No client work yet?</strong><br>
+                        • Create mock projects (sample social calendar, email templates)<br>
+                        • Offer free work to 1-2 businesses for testimonials<br>
+                        • Document personal projects<br><br>
+                        <strong>Platform options:</strong><br>
+                        • Notion (free, professional)<br>
+                        • Google Sites (simple, quick)<br>
+                        • Canva portfolio template<br>
+                        • Personal website (WordPress, Wix)
+                    </div>
+                </div>
+                
+                <div class="tip">
+                    💡 Portfolio quality > quantity. 3 excellent samples beat 10 mediocre ones
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Review & Testimonial Strategy</div>
+                    <div class="card-content">
+                        <strong>When to ask:</strong><br>
+                        • After successful project completion<br>
+                        • When client expresses satisfaction<br>
+                        • At 3-month milestone<br>
+                        • Never during problems/delays<br><br>
+                        <strong>How to ask:</strong><br>
+                        "I'm building my portfolio to help more clients like you. Would you mind sharing a quick review about your experience working with me? Specific results you achieved would be incredibly helpful."<br><br>
+                        <strong>Make it easy:</strong><br>
+                        • Provide platform link (Upwork, LinkedIn)<br>
+                        • Offer to draft for their approval<br>
+                        • Suggest 2-3 talking points<br><br>
+                        <strong>Use testimonials:</strong><br>
+                        • Profile/website<br>
+                        • Proposals<br>
+                        • Social media<br>
+                        • Marketing materials
+                    </div>
+                </div>
+            </div>
+            
+            <div id="security" class="section">
+                <div class="card">
+                    <div class="card-title">Password Management</div>
+                    <div class="card-content">
+                        <strong>Never do:</strong><br>
+                        • Reuse passwords across accounts<br>
+                        • Share passwords via email/chat<br>
+                        • Store in plain text files<br>
+                        • Use simple passwords (name+123)<br><br>
+                        <strong>Best practices:</strong><br>
+                        • Use password manager: <span class="tool">LastPass</span> <span class="tool">1Password</span> <span class="tool">Bitwarden</span><br>
+                        • 16+ character passwords<br>
+                        • Mix: letters, numbers, symbols<br>
+                        • Unique password per account<br>
+                        • Enable 2FA everywhere possible<br><br>
+                        <strong>Client access sharing:</strong><br>
+                        • Use password manager's share feature<br>
+                        • Set expiration dates if temporary<br>
+                        • Revoke access immediately when contract ends
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">GDPR & Data Privacy Basics</div>
+                    <div class="card-content">
+                        <strong>GDPR applies if:</strong><br>
+                        • Client is EU-based<br>
+                        • You handle EU customer data<br><br>
+                        <strong>Key requirements:</strong><br>
+                        • Only collect necessary data<br>
+                        • Store securely (encrypted)<br>
+                        • Delete upon request<br>
+                        • Report breaches within 72hrs<br>
+                        • Have data processing agreement<br><br>
+                        <strong>Philippine Data Privacy Act (DPA):</strong><br>
+                        • Similar to GDPR<br>
+                        • Applies to personal data of Filipinos<br>
+                        • Penalties up to ₱5M<br><br>
+                        <strong>Practical compliance:</strong><br>
+                        • Don't share client data unnecessarily<br>
+                        • Use secure file transfer (not plain email)<br>
+                        • Clear browsing data regularly<br>
+                        • Secure home network
+                    </div>
+                </div>
+                
+                <div class="warning">
+                    ⚠️ Screenshot client data? Blur sensitive info before sharing anywhere
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">NDA (Non-Disclosure Agreement)</div>
+                    <div class="card-content">
+                        <strong>What it means:</strong><br>
+                        • You can't share client's confidential info<br>
+                        • Usually lasts 2-5 years after contract<br>
+                        • Breach can result in legal action<br><br>
+                        <strong>What's typically covered:</strong><br>
+                        • Business strategies & plans<br>
+                        • Financial information<br>
+                        • Customer lists & data<br>
+                        • Proprietary processes<br>
+                        • Unreleased products/services<br><br>
+                        <strong>You CAN still:</strong><br>
+                        • List client on resume (unless NDA forbids)<br>
+                        • Describe general work (no specifics)<br>
+                        • Use skills learned<br><br>
+                        <strong>Before signing:</strong> Read carefully, ask questions, understand duration & scope
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Screen Recording Policies</div>
+                    <div class="card-content">
+                        <strong>If client requires monitoring:</strong><br>
+                        • Understand what's recorded (screen, keystrokes, webcam?)<br>
+                        • Know where data is stored<br>
+                        • Confirm it stops outside work hours<br>
+                        • Ensure compliance with PH labor laws<br><br>
+                        <strong>Tools:</strong> Hubstaff, Time Doctor, Teramind<br><br>
+                        <strong>Your rights:</strong><br>
+                        • Pause during breaks<br>
+                        • Blur personal notifications<br>
+                        • Access your own activity logs<br><br>
+                        <strong>Red flag:</strong> 24/7 monitoring or webcam-always-on requirements
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">File Encryption Methods</div>
+                    <div class="card-content">
+                        <strong>For files at rest:</strong><br>
+                        • Windows: BitLocker<br>
+                        • Mac: FileVault<br>
+                        • Individual files: 7-Zip with password<br><br>
+                        <strong>For file transfer:</strong><br>
+                        • Cloud: Google Drive/Dropbox (encrypted in transit)<br>
+                        • Sensitive files: Firefox Send, Tresorit<br>
+                        • Never: Unencrypted email attachments<br><br>
+                        <strong>Email encryption:</strong><br>
+                        • Gmail: Confidential mode<br>
+                        • ProtonMail for high security<br><br>
+                        <strong>Backup encryption:</strong><br>
+                        • External drives: VeraCrypt<br>
+                        • Cloud backup: Backblaze (auto-encrypted)
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Phishing & Scam Protection</div>
+                    <div class="card-content">
+                        <strong>Common VA scams:</strong><br>
+                        • Fake job offers asking for payment<br>
+                        • "Client" sends check, asks you to wire money<br>
+                        • Requests for personal banking info upfront<br>
+                        • Too-good-to-be-true rates for simple work<br><br>
+                        <strong>Email phishing signs:</strong><br>
+                        • Urgent action required<br>
+                        • Suspicious sender address<br>
+                        • Spelling/grammar errors<br>
+                        • Unexpected attachments<br>
+                        • Requests for password/sensitive data<br><br>
+                        <strong>Protection:</strong><br>
+                        • Verify sender via separate channel<br>
+                        • Hover over links before clicking<br>
+                        • Use antivirus software<br>
+                        • Report suspicious emails
+                    </div>
+                </div>
+                
+                <div class="tip">
+                    💡 Set up separate work email—never mix personal/work accounts
+                </div>
+            </div>
+            
+            <div id="development" class="section">
+                <div class="card">
+                    <div class="card-title">Free Certification Programs 2026</div>
+                    <div class="card-content">
+                        <strong>Google:</strong><br>
+                        • Google Analytics Certification<br>
+                        • Google Ads Certification<br>
+                        • Google Digital Marketing<br>
+                        • Google Project Management<br><br>
+                        <strong>HubSpot Academy:</strong><br>
+                        • Inbound Marketing<br>
+                        • Content Marketing<br>
+                        • Email Marketing<br>
+                        • Social Media Marketing<br>
+                        • CRM Certification<br><br>
+                        <strong>Meta Blueprint:</strong><br>
+                        • Facebook Ads<br>
+                        • Instagram Marketing<br><br>
+                        <strong>Others:</strong><br>
+                        • LinkedIn Learning (many free courses)<br>
+                        • Coursera (audit mode free)<br>
+                        • Alison.com (free certificates)<br><br>
+                        <div class="tip">
+                            💡 Add certifications to LinkedIn + resume = credibility boost
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Skill Upgrade Roadmap</div>
+                    <div class="card-content">
+                        <strong>Months 1-3 (Foundation):</strong><br>
+                        • Master core tools (Google Workspace, Slack)<br>
+                        • Time management certification<br>
+                        • Email etiquette course<br>
+                        • Basic graphic design (Canva)<br><br>
+                        <strong>Months 4-6 (Intermediate):</strong><br>
+                        • CRM platform (choose one, go deep)<br>
+                        • Social media management<br>
+                        • Basic automation (Zapier)<br>
+                        • Analytics & reporting<br><br>
+                        <strong>Months 7-12 (Advanced):</strong><br>
+                        • AI tools mastery<br>
+                        • Niche specialization<br>
+                        • Project management methodology<br>
+                        • Advanced Excel/Sheets<br><br>
+                        <strong>Year 2+ (Expert):</strong><br>
+                        • Team management<br>
+                        • Business strategy<br>
+                        • Agency building<br>
+                        • Coaching other VAs
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Networking Strategies</div>
+                    <div class="card-content">
+                        <strong>Online communities:</strong><br>
+                        • Facebook: VA Hangout, Filipino VAs, Remote Staff groups<br>
+                        • Reddit: r/VirtualAssistants, r/freelance<br>
+                        • Discord: VA communities, Remote Work servers<br>
+                        • LinkedIn: Join VA groups, engage weekly<br><br>
+                        <strong>Local PH groups:</strong><br>
+                        • Manila VA Meetups<br>
+                        • Cebu Freelancers Network<br>
+                        • Davao Remote Workers<br><br>
+                        <strong>How to network effectively:</strong><br>
+                        • Give value first (answer questions, share resources)<br>
+                        • Share wins & challenges authentically<br>
+                        • Collaborate on projects<br>
+                        • Refer overflow work to trusted peers<br>
+                        • Attend virtual conferences (often free)<br><br>
+                        <strong>Monthly goal:</strong> 5 meaningful conversations with other VAs
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Personal Branding</div>
+                    <div class="card-content">
+                        <strong>Your unique value proposition:</strong><br>
+                        "I help [target client] achieve [specific result] through [your method/specialty]"<br><br>
+                        <strong>Examples:</strong><br>
+                        • "I help real estate agents close 30% more deals through systematic lead follow-up"<br>
+                        • "I help e-commerce brands scale to 6-figures with optimized Amazon listings"<br><br>
+                        <strong>Content pillars (choose 3):</strong><br>
+                        • VA tips & tutorials<br>
+                        • Behind-the-scenes workflow<br>
+                        • Client success stories<br>
+                        • Industry insights<br>
+                        • Tool reviews & comparisons<br>
+                        • Productivity hacks<br><br>
+                        <strong>Consistency matters:</strong><br>
+                        • Post 2-3x/week minimum<br>
+                        • Same profile photo everywhere<br>
+                        • Unified bio/description<br>
+                        • Professional domain email (yourname@yourdomain.com)
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">VA Industry Trends 2026</div>
+                    <div class="card-content">
+                        <strong>Hot demand areas:</strong><br>
+                        • AI-assisted VAs (prompt engineering)<br>
+                        • Automation specialists<br>
+                        • Video editing (short-form content)<br>
+                        • Community management<br>
+                        • Podcast production<br>
+                        • Web3/crypto admin support<br><br>
+                        <strong>Declining demand:</strong><br>
+                        • Basic data entry (AI automation)<br>
+                        • Simple scheduling (tools handle it)<br><br>
+                        <strong>Skills to develop now:</strong><br>
+                        • AI collaboration (not replacement fear)<br>
+                        • Video content creation<br>
+                        • Analytics interpretation<br>
+                        • Cross-platform integration<br><br>
+                        <strong>Average rates rising:</strong> 15-25% increase from 2024 for skilled VAs
+                    </div>
+                </div>
+                
+                <div class="tip">
+                    💡 Follow thought leaders: Chris Ducker, Tim Ferriss, VA industry blogs
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Reading List Essentials</div>
+                    <div class="card-content">
+                        <strong>Must-read books:</strong><br>
+                        • "Virtual Freedom" - Chris Ducker<br>
+                        • "The 4-Hour Work Week" - Tim Ferriss<br>
+                        • "Deep Work" - Cal Newport<br>
+                        • "Atomic Habits" - James Clear<br>
+                        • "The Lean Startup" - Eric Ries<br><br>
+                        <strong>Podcasts:</strong><br>
+                        • The Virtual Freedom Podcast<br>
+                        • The Tim Ferriss Show<br>
+                        • Online Marketing Made Easy<br>
+                        • Freelance to Founder<br><br>
+                        <strong>Blogs to follow:</strong><br>
+                        • Smart Blogger<br>
+                        • Buffer Blog<br>
+                        • HubSpot Blog<br>
+                        • Filipino VA resources on Medium
+                    </div>
+                </div>
+            </div>
+            
+            <div id="retention" class="section">
+                <div class="card">
+                    <div class="card-title">Exceeding Expectations Tactics</div>
+                    <div class="card-content">
+                        <strong>Deliver early:</strong><br>
+                        • Set deadline Friday, deliver Wednesday<br>
+                        • Builds buffer for revisions<br>
+                        • Shows reliability & efficiency<br><br>
+                        <strong>Proactive communication:</strong><br>
+                        • Weekly summary without being asked<br>
+                        • Flag potential issues before they're problems<br>
+                        • Suggest improvements to processes<br><br>
+                        <strong>Add unexpected value:</strong><br>
+                        • "While doing X, I noticed Y and fixed it"<br>
+                        • Share relevant article/resource<br>
+                        • Create template for recurring task<br><br>
+                        <strong>Anticipate needs:</strong><br>
+                        • Prepare meeting materials before asked<br>
+                        • Notice patterns in requests<br>
+                        • Have answers ready for predictable questions<br><br>
+                        <strong>Quality over speed:</strong><br>
+                        • Double-check before submitting<br>
+                        • Follow brand guidelines precisely<br>
+                        • Zero typos in client-facing work
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Upselling Additional Services</div>
+                    <div class="card-content">
+                        <strong>When to upsell:</strong><br>
+                        • After 90 days of solid performance<br>
+                        • When you spot clear need<br>
+                        • During positive feedback moments<br>
+                        • Never during crisis/problems<br><br>
+                        <strong>How to propose:</strong><br>
+                        "I've noticed [observation]. I could also handle [additional service] which would [specific benefit]. This would add [X hours/week] at [rate]. Interested in discussing?"<br><br>
+                        <strong>Services to expand into:</strong><br>
+                        • Email management → Full inbox zero system<br>
+                        • Social scheduling → Content creation<br>
+                        • Calendar → Travel planning<br>
+                        • Basic tasks → Project management<br>
+                        • Admin support → Team coordination<br><br>
+                        <strong>Package it:</strong><br>
+                        • Bronze: 20hrs/month basic tasks<br>
+                        • Silver: 40hrs + social media<br>
+                        • Gold: 60hrs + full management + reporting
+                    </div>
+                </div>
+                
+                <div class="tip">
+                    💡 Client retention is 5x cheaper than acquisition—invest in relationships
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Long-term Relationship Building</div>
+                    <div class="card-content">
+                        <strong>Remember personal details:</strong><br>
+                        • Keep notes on family, hobbies, preferences<br>
+                        • Acknowledge birthdays/anniversaries<br>
+                        • Ask about previous conversations<br><br>
+                        <strong>Quarterly business reviews:</strong><br>
+                        • Schedule 30min check-in<br>
+                        • Show metrics & achievements<br>
+                        • Discuss goals for next quarter<br>
+                        • Ask: "What's working? What could improve?"<br><br>
+                        <strong>Stay visible:</strong><br>
+                        • Share relevant industry news<br>
+                        • Celebrate their wins publicly (with permission)<br>
+                        • Send holiday greetings<br>
+                        • Occasional "thinking of you" check-ins<br><br>
+                        <strong>Grow with them:</strong><br>
+                        • Learn about their industry<br>
+                        • Understand their business goals<br>
+                        • Suggest growth opportunities<br>
+                        • Be invested in their success
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Performance Review Template</div>
+                    <div class="card-content">
+                        <strong>Initiate every 6 months:</strong><br>
+                        "I'd love to schedule a quick review to ensure I'm meeting your expectations and discuss how we can work even better together."<br><br>
+                        <strong>Discussion points:</strong><br>
+                        1. What's working well?<br>
+                        2. Where can I improve?<br>
+                        3. Are current deliverables still priorities?<br>
+                        4. Any new needs emerging?<br>
+                        5. How's the communication/process?<br>
+                        6. Appropriate time to discuss rate adjustment?<br><br>
+                        <strong>Document everything:</strong><br>
+                        • Send summary after discussion<br>
+                        • Note action items<br>
+                        • Track improvements made<br>
+                        • Reference in future reviews
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Referral Program Strategy</div>
+                    <div class="card-content">
+                        <strong>When to ask for referrals:</strong><br>
+                        • After major project success<br>
+                        • When client gives enthusiastic praise<br>
+                        • At 6-month or 1-year milestone<br>
+                        • After quarterly review (if positive)<br><br>
+                        <strong>The ask:</strong><br>
+                        "I'm looking to work with more [type of client] like yourself. Do you know anyone who might benefit from similar support? I'd be happy to offer [incentive] for successful referrals."<br><br>
+                        <strong>Referral incentives:</strong><br>
+                        • 10% discount on next month<br>
+                        • 5 free hours of service<br>
+                        • $50-100 credit<br>
+                        • Gift card to favorite restaurant<br><br>
+                        <strong>Make it easy:</strong><br>
+                        • Provide introduction template they can forward<br>
+                        • Create one-page "services offered" PDF<br>
+                        • Have testimonials ready to share<br><br>
+                        <strong>Follow up:</strong> Thank them regardless of outcome
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Client Offboarding (When Needed)</div>
+                    <div class="card-content">
+                        <strong>Red flags to end relationship:</strong><br>
+                        • Consistent late/no payment<br>
+                        • Disrespectful treatment<br>
+                        • Scope creep without compensation<br>
+                        • Unreasonable demands despite conversations<br>
+                        • Your mental health suffering<br><br>
+                        <strong>Professional exit:</strong><br>
+                        • Give notice per contract (usually 2-4 weeks)<br>
+                        • Document all processes/SOPs<br>
+                        • Train replacement if requested<br>
+                        • Complete pending work<br>
+                        • Return all access/materials<br>
+                        • Request final payment & testimonial (if appropriate)<br><br>
+                        <strong>Graceful script:</strong><br>
+                        "After careful consideration, I've decided to [reason: focus on specialization/reduce workload/pursue new direction]. My last day will be [date]. I'll ensure a smooth transition."
+                    </div>
+                </div>
+            </div>
+            
+            <div id="balance" class="section">
+                <div class="card">
+                    <div class="card-title">Time Blocking Technique</div>
+                    <div class="card-content">
+                        <strong>Daily schedule template:</strong><br>
+                        <div class="time-slot">8-9am: Deep work</div>
+                        <div class="time-slot">9-10am: Email/messages</div>
+                        <div class="time-slot">10-12pm: Client tasks</div>
+                        <div class="time-slot">12-1pm: Lunch break</div>
+                        <div class="time-slot">1-3pm: Deep work</div>
+                        <div class="time-slot">3-4pm: Admin/learning</div>
+                        <div class="time-slot">4-5pm: Wrap-up/planning</div><br>
+                        <strong>Color coding:</strong><br>
+                        • Red: Focus/deep work (no interruptions)<br>
+                        • Yellow: Meetings/calls<br>
+                        • Green: Flexible tasks<br>
+                        • Blue: Personal time (non-negotiable)<br><br>
+                        <strong>Rules:</strong><br>
+                        • Batch similar tasks together<br>
+                        • Protect focus blocks fiercely<br>
+                        • Schedule breaks (not optional)<br>
+                        • Buffer time between blocks (10min)
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Family/Work Boundaries</div>
+                    <div class="card-content">
+                        <strong>Set physical boundaries:</strong><br>
+                        • Dedicated workspace (even if corner of room)<br>
+                        • Door or visual signal when working<br>
+                        • Clear "office hours" communicated to family<br><br>
+                        <strong>Educate household:</strong><br>
+                        • "When I'm at my desk, I'm at work (like office job)"<br>
+                        • Emergency interruptions only during work<br>
+                        • Break times for family interaction<br><br>
+                        <strong>End-of-day ritual:</strong><br>
+                        • Shut down computer completely<br>
+                        • Change clothes (mental shift)<br>
+                        • 5-minute walk/stretch<br>
+                        • Turn off work notifications<br><br>
+                        <strong>Weekend protection:</strong><br>
+                        • Set auto-responder: "Available Monday [time]"<br>
+                        • Truly disconnect (no "just checking email")<br>
+                        • Plan family activities<br>
+                        • Charge premium for weekend work (2x rate minimum)
+                    </div>
+                </div>
+                
+                <div class="tip">
+                    💡 Your availability sets client expectations—train them from day one
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Productivity Hacks</div>
+                    <div class="card-content">
+                        <strong>Pomodoro Method:</strong><br>
+                        • 25min focused work<br>
+                        • 5min break<br>
+                        • Repeat 4x<br>
+                        • 15-30min longer break<br>
+                        • Apps: Focus Booster, Pomofocus<br><br>
+                        <strong>2-Minute Rule:</strong><br>
+                        If task takes <2min, do it immediately (don't add to list)<br><br>
+                        <strong>Eat the Frog:</strong><br>
+                        Hardest/most important task FIRST each day<br><br>
+                        <strong>Inbox Zero:</strong><br>
+                        • Process email 2x/day only<br>
+                        • Delete, Delegate, Defer, or Do<br>
+                        • Use folders/labels aggressively<br><br>
+                        <strong>Template everything:</strong><br>
+                        • Email responses<br>
+                        • Reports<br>
+                        • Meeting agendas<br>
+                        • Client communications<br><br>
+                        <strong>Keyboard shortcuts:</strong><br>
+                        Master 10 shortcuts = 2hrs/week saved
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Mental Health Resources</div>
+                    <div class="card-content">
+                        <strong>Free PH resources:</strong><br>
+                        • NCMH Crisis Hotline: 1553, 0917-899-8727<br>
+                        • In Touch: Crisis Line - (02) 8893-7603<br>
+                        • Natasha Goulbourn Foundation: 0917-558-4673<br><br>
+                        <strong>Online therapy (affordable):</strong><br>
+                        • MindNation (PH-based)<br>
+                        • BetterHelp (global)<br>
+                        • Empath (PH therapists)<br><br>
+                        <strong>Self-care essentials:</strong><br>
+                        • 7-8 hours sleep non-negotiable<br>
+                        • Regular exercise (20min daily minimum)<br>
+                        • Sunlight exposure (15min morning)<br>
+                        • Social connection (weekly)<br>
+                        • Hobby outside of work<br><br>
+                        <strong>Stress management:</strong><br>
+                        • Meditation apps: Headspace, Calm<br>
+                        • Breathing exercises (4-7-8 technique)<br>
+                        • Journaling (5min daily)<br>
+                        • Talk to trusted friend/family
+                    </div>
+                </div>
+                
+                <div class="warning">
+                    ⚠️ Burnout is real—your health is more important than any client
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Community Support Groups</div>
+                    <div class="card-content">
+                        <strong>Facebook Groups (Active PH VAs):</strong><br>
+                        • Filipino Virtual Assistants (30k+ members)<br>
+                        • VA Hangout Philippines<br>
+                        • Remote Staff PH Community<br>
+                        • Work From Home Philippines<br>
+                        • Freelancers Philippines<br><br>
+                        <strong>Discord Servers:</strong><br>
+                        • Remote Workers Lounge<br>
+                        • VA Community Hub<br>
+                        • Freelance Philippines<br><br>
+                        <strong>What communities offer:</strong><br>
+                        • Job leads & opportunities<br>
+                        • Troubleshooting help<br>
+                        • Rate benchmarking<br>
+                        • Emotional support<br>
+                        • Skill sharing<br>
+                        • Accountability partners<br><br>
+                        <strong>Engage authentically:</strong> Help others, share wins/struggles, build real relationships
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Financial Wellness</div>
+                    <div class="card-content">
+                        <strong>Income diversification:</strong><br>
+                        • Primary client: 50-60% income<br>
+                        • Secondary clients: 30-40%<br>
+                        • Passive income: 10% (digital products, courses)<br><br>
+                        <strong>50/30/20 Budget Rule:</strong><br>
+                        • 50% Needs (rent, food, utilities)<br>
+                        • 30% Wants (entertainment, dining out)<br>
+                        • 20% Savings (emergency fund, investments)<br><br>
+                        <strong>PH-specific savings:</strong><br>
+                        • SSS contributions (if self-employed)<br>
+                        • PhilHealth<br>
+                        • Pag-IBIG<br>
+                        • Personal emergency fund<br>
+                        • Retirement (MP2, mutual funds)<br><br>
+                        <strong>Track monthly:</strong> Income, expenses, savings rate, debt (if any)
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Career Progression Path</div>
+                    <div class="card-content">
+                        <strong>Year 1: Foundation</strong><br>
+                        • Master core VA skills<br>
+                        • Build portfolio<br>
+                        • 2-3 steady clients<br>
+                        • $3-5/hr → $5-8/hr<br><br>
+                        <strong>Year 2-3: Specialization</strong><br>
+                        • Choose niche<br>
+                        • Advanced certifications<br>
+                        • 3-5 clients or 1-2 retainers<br>
+                        • $8-15/hr<br><br>
+                        <strong>Year 4-5: Expert</strong><br>
+                        • Industry authority<br>
+                        • Premium clients<br>
+                        • Selective projects<br>
+                        • $15-25/hr<br><br>
+                        <strong>Year 6+: Scale</strong><br>
+                        • Build VA agency<br>
+                        • Train/hire team<br>
+                        • Create courses/products<br>
+                        • Multiple income streams<br>
+                        • $25-40+/hr or project-based pricing
+                    </div>
+                </div>
+            </div>
+            
+            <div id="daily" class="section active">
+                <div class="card">
+                    <div class="card-title">Morning Routine</div>
+                    <div class="card-content">
+                        <ul class="checklist">
+                            <li>Check client timezone (EST/PST/GMT)</li>
+                            <li>Review calendar & pending tasks</li>
+                            <li>Check email & messages (Slack/Teams)</li>
+                            <li>Update task management tool status</li>
+                            <li>Send morning availability update</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Philippine Time Zones</div>
+                    <div class="card-content">
+                        <div class="time-slot">PH = EST +13hrs</div>
+                        <div class="time-slot">PH = PST +16hrs</div>
+                        <div class="time-slot">PH = GMT +8hrs</div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">End of Day Protocol</div>
+                    <div class="card-content">
+                        <ul class="checklist">
+                            <li>Send EOD report to client</li>
+                            <li>Update task progress/blockers</li>
+                            <li>Set tomorrow's priorities</li>
+                            <li>Log hours in time tracker</li>
+                            <li>Clear desktop notifications</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="tools" class="section">
+                <div class="card">
+                    <div class="card-title">Essential Apps 2026</div>
+                    <div class="card-content">
+                        <span class="tool">Slack</span>
+                        <span class="tool">Zoom</span>
+                        <span class="tool">Google Workspace</span>
+                        <span class="tool">Asana/Trello</span>
+                        <span class="tool">Notion</span>
+                        <span class="tool">Loom</span>
+                        <span class="tool">Canva</span>
+                        <span class="tool">LastPass</span>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Time Tracking</div>
+                    <div class="card-content">
+                        <span class="tool">Hubstaff</span>
+                        <span class="tool">Time Doctor</span>
+                        <span class="tool">Toggl</span>
+                        <span class="tool">Clockify</span>
+                    </div>
+                </div>
+                
+                <div class="tip">
+                    💡 Always use VPN for security. Recommended: NordVPN, ExpressVPN
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Internet Backup Plan</div>
+                    <div class="card-content">
+                        <ul class="checklist">
+                            <li>Primary: Fiber (PLDT/Converge)</li>
+                            <li>Backup: Mobile hotspot (Globe/Smart)</li>
+                            <li>Emergency: Nearby co-working space</li>
+                            <li>Test backup weekly</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="comm" class="section">
+                <div class="card">
+                    <div class="card-title">Response Time Standards</div>
+                    <div class="card-content">
+                        <ul class="checklist">
+                            <li>Urgent: Within 15 minutes</li>
+                            <li>High Priority: Within 1 hour</li>
+                            <li>Normal: Within 3 hours</li>
+                            <li>Low Priority: Same day</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Email Etiquette</div>
+                    <div class="card-content">
+                        <ul class="checklist">
+                            <li>Professional greeting always</li>
+                            <li>Clear subject lines</li>
+                            <li>Proofread before sending</li>
+                            <li>Use bullet points for clarity</li>
+                            <li>Include action items at end</li>
+                            <li>Professional signature with PH timezone</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="warning">
+                    ⚠️ Never share: Client passwords, financial info, or proprietary data outside approved channels
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Meeting Prep</div>
+                    <div class="card-content">
+                        <ul class="checklist">
+                            <li>Test audio/video 10min before</li>
+                            <li>Quiet, professional background</li>
+                            <li>Agenda/notes ready</li>
+                            <li>Recording permission if needed</li>
+                            <li>Follow-up notes within 24hrs</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="tasks" class="section">
+                <div class="card">
+                    <div class="card-title">Common VA Tasks</div>
+                    <div class="card-content">
+                        <ul class="checklist">
+                            <li>Email management & filtering</li>
+                            <li>Calendar scheduling & coordination</li>
+                            <li>Data entry & CRM updates</li>
+                            <li>Social media management</li>
+                            <li>Document preparation</li>
+                            <li>Research & reporting</li>
+                            <li>Customer service support</li>
+                            <li>Travel arrangements</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Task Prioritization</div>
+                    <div class="card-content">
+                        <strong>1. Urgent + Important:</strong> Do first<br>
+                        <strong>2. Important + Not Urgent:</strong> Schedule<br>
+                        <strong>3. Urgent + Not Important:</strong> Delegate if possible<br>
+                        <strong>4. Neither:</strong> Eliminate or defer
+                    </div>
+                </div>
+                
+                <div class="tip">
+                    💡 Use Pomodoro: 25min focus + 5min break = Higher productivity
+                </div>
+            </div>
+            
+            <div id="tips" class="section">
+                <div class="card">
+                    <div class="card-title">Professional Growth</div>
+                    <div class="card-content">
+                        <ul class="checklist">
+                            <li>Learn one new tool monthly</li>
+                            <li>Request feedback quarterly</li>
+                            <li>Document processes you create</li>
+                            <li>Join VA communities online</li>
+                            <li>Update skills on LinkedIn</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Health & Wellness</div>
+                    <div class="card-content">
+                        <ul class="checklist">
+                            <li>20-20-20 rule: Every 20min, look 20ft away for 20sec</li>
+                            <li>Stand/stretch every hour</li>
+                            <li>Proper ergonomic setup</li>
+                            <li>Stay hydrated (8 glasses/day)</li>
+                            <li>Set work boundaries</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Philippine Labor Rights</div>
+                    <div class="card-content">
+                        <ul class="checklist">
+                            <li>Know your contract terms</li>
+                            <li>Track overtime accurately</li>
+                            <li>Understand holiday pay rules</li>
+                            <li>Keep payment records</li>
+                            <li>Know PhilHealth/SSS obligations</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="tip">
+                    💡 Build emergency fund: Save 3-6 months expenses for stability
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Red Flags to Avoid</div>
+                    <div class="card-content">
+                        <ul class="checklist">
+                            <li>No written contract/agreement</li>
+                            <li>Requests for money upfront</li>
+                            <li>Unprofessional communication</li>
+                            <li>Unrealistic expectations</li>
+                            <li>No payment schedule clarity</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.section');
+            const tabs = document.querySelectorAll('.tab');
+            
+            sections.forEach(section => section.classList.remove('active'));
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            document.getElementById(sectionId).classList.add('active');
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
